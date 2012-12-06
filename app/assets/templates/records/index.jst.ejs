@@ -1,0 +1,11 @@
+<h1>Zoh My Records</h1>
+
+<ul class='records'>
+<% for(var i = 0; i < records.models.length; i++) { %>
+  <li class='record'>
+    <h4><%= records.models[i].get('title') %></h4>
+    <img src="<%= records.models[i].get('cover_url') %>"></img>
+    <h5><%= records.models[i].get('artist') %></h5>
+  </li>
+<% } %>
+</ul>

@@ -4,7 +4,8 @@ window.ZohMyRecords = {
   Views: {},
   Routers: {},
   init: function() {
-    alert('Hello from Backbone!');
+    new ZohMyRecords.Routers.Records;
+    Backbone.history.start();
   }
 };
 
