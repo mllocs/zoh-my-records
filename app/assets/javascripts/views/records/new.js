@@ -7,10 +7,6 @@ ZohMyRecords.Views.NewRecord = Backbone.View.extend({
     "submit #new_record": "createRecord"
   },
 
-  initialize: function() {
-    // this.collection.on('add', this.cancel, this)
-  },
-
   render: function() {
     $(this.el).html(this.template());
     return this;

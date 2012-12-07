@@ -57,4 +57,13 @@ class RecordsPagesTest < ActionDispatch::IntegrationTest
     assert_equal current_path, "/"
   end
 
+  test "record delete button" do
+    visit "/"
+    assert page.has_content?("Low Edges")
+    click_link "delete_record_1"
+    assert_equal page.driver.browser.switch_to.alert.text, "Are you sure?"
+    page.driver.browser.switch_to.alert.accept
+    assert page.has_no_content?("Low Edges")
+  end
+
 end

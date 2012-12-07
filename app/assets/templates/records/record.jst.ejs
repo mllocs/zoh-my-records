@@ -1,6 +1,6 @@
 <div class='menu'>
   <a href="#" class="edit">Edit</a> ·
-  <a href="#" class="delete">Delete</a>
+  <a href="#" id="delete_record_<%= record.get('id') %>" class="delete">Delete</a>
 </div>
 <a class="record" href="<%= record.get('spotify_uri') %>">
   <img class="cover" src="<%= record.get('cover_url') %>"></img>
