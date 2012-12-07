@@ -9,7 +9,9 @@ class RecordsControllerTest < ActionController::TestCase
   end
 
   test "should respond create" do
-    post :create, format: :json, record: { title: "The Misterious Production Of Eggs", artist: "Andrew Bird" }
+    assert_difference('Record.count', 1) do
+      post :create, format: :json, record: { title: "The Misterious Production Of Eggs", artist: "Andrew Bird" }
+    end
     assert_response :success
     assert_not_nil assigns(:record)
   end
