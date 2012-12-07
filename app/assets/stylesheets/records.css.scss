@@ -2,19 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-ul.records {
+ul#records {
   margin: 0;
-  padding: 0;
+  padding: 0 0 20px;
   list-style: none;
+  @include clearfix;
 
-  li.record {
+  li {
     float: left;
     text-align: center;
-    max-width: 220px;
-    padding: 20px;
+    width: 220px;
+    height: 275px;
+
+    padding: 10px 20px 20px;
     margin: 10px;
-    @include box-shadow(0 0 8px #ccc);
+    @include box-shadow(0 0 8px #bbb);
     background-color: #eee;
+
+    div.menu {
+      font-size: 12px;
+      padding-bottom: 10px;
+      color: #777;
+      a {
+        color: #777;
+      }
+    }
 
     img.cover {
       width: 200px;
@@ -23,11 +35,21 @@ ul.records {
 
     a.record {
       display: block;
+      span.title {
+        font-size: 16px;
+      }
     }
 
     span.artist {
       font-size: 14px;
       line-height: 16px;
+    }
+  }
+
+  li.new {
+    a {
+      font-size: 30px;
+      line-height: 275px;
     }
   }
 }

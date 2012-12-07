@@ -1,15 +1,5 @@
-<h1>Zoh My Records</h1>
-
-<ul class='records'>
-<% for(var i = 0; i < records.models.length; i++) { %>
-  <li class='record'>
-    <a class="record" href="<%= records.models[i].get('spotify_uri') %>">
-      <img class="cover" src="<%= records.models[i].get('cover_url') %>"></img>
-      <%= records.models[i].get('title') %>
-    </a>
-    <span class='artist'>
-      <%= records.models[i].get('artist') %>
-    </span>
+<ul id='records'>
+  <li class='new record'>
+    <a href="#">New Record</a>
   </li>
-<% } %>
 </ul>

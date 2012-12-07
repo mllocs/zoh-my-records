@@ -1,0 +1,15 @@
+<div class='menu'>
+  <a href="#" class="edit">Edit</a> ·
+  <a href="#" class="delete">Delete</a>
+</div>
+<a class="record" href="<%= record.get('spotify_uri') %>">
+  <img class="cover" src="<%= record.get('cover_url') %>"></img>
+</a>
+<a class="record" href="<%= record.get('spotify_uri') %>">
+  <span class='title'>
+    <%= record.get('title') %>
+  </span>
+</a>
+<span class='artist'>
+  <%= record.get('artist') %>
+</span>
