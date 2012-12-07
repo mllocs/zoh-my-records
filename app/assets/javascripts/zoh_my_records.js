@@ -5,7 +5,7 @@ window.ZohMyRecords = {
   Routers: {},
   init: function() {
     new ZohMyRecords.Routers.Records;
-    Backbone.history.start();
+    Backbone.history.start({ pushState: true });
   }
 };
 

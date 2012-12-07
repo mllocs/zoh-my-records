@@ -8,7 +8,7 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @record = Record.new(params[:record])
+    @record = Record.create(params[:record])
     respond_with @record
   end
 
