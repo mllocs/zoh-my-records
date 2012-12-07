@@ -39,3 +39,8 @@ gem 'jquery-rails'
 
 gem 'backbone-on-rails'
 gem 'bourbon'
+
+group :test do
+  gem 'test-unit-capybara'
+  gem "launchy" # open browser with save_and_open_page
+end
