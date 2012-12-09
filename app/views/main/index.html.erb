@@ -1,3 +1,3 @@
 <h1 class="title"><a href="/">ZOH·MY·RECORDS</a></h1>
 
-<div id="container">Loading...</div>
+<%= content_tag "div", "Loading...", id: "container", data: { records: Record.all } %>
