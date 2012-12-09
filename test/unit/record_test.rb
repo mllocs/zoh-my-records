@@ -17,4 +17,9 @@ class RecordTest < ActiveSupport::TestCase
     assert !record.save
   end
 
+  test "should not save record with an incorrect spotify_url" do
+    record = Record.new(title: "Take Five", artist: "Dave Brubeck", spotify_uri: "Not a valid spotify URI")
+    assert !record.save
+  end
+
 end

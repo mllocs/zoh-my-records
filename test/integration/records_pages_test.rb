@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'test_helper'
 
 class RecordsPagesTest < ActionDispatch::IntegrationTest
@@ -9,7 +10,7 @@ class RecordsPagesTest < ActionDispatch::IntegrationTest
   test "basic record elements exist" do
     visit "/"
     within("h1") do
-      assert page.has_content?("Zoh My Records")
+      assert page.has_content?("ZOH·MY·RECORDS")
     end
     within("#container") do
       assert page.has_selector?("ul#records")
@@ -32,7 +33,7 @@ class RecordsPagesTest < ActionDispatch::IntegrationTest
     fill_in "title", :with => "The Harrow And The Harvest"
     fill_in "artist", :with => "Gillian Welch"
     fill_in "cover_url", :with => "http://upload.wikimedia.org/wikipedia/en/thumb/1/18/Theharrowandtheharvest.jpg"
-    fill_in "spotify_uri", :with => "spotify:user:maxim.colls:playlist:0gxuTvV1XhCrnePamtPRrO"
+    fill_in "spotify_uri", :with => "spotify:album:7MLzdbFViVmpQdnNmxQXoE"
     click_button "Add Record"
 
     within("ul#records") do

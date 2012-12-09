@@ -17,7 +17,7 @@ Record.create!(
   title: "The Heart Of Sunday Night", 
   artist: "Tom Waits", 
   cover_url: "http://ijustreadaboutthat.files.wordpress.com/2011/09/75112.jpg", 
-  spotify_uri: "spotify:track:23X3UiWmkM09Ug2heM6z38"
+  spotify_uri: "spotify:album:7MLzdbFViVmpQdnNmxQXoE"
 )
 
 Record.create!(
