@@ -2,11 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-  padding-left: 30px;
+body {
+  background: #eee;
+  font-family: Helvetica;
+}
+
+h1.title {
+  padding-left: 82px;
+  background: url('disk.png') no-repeat 32px 0;
+  line-height: 40px;
+  a {
+    color: black;
+    font-size: 34px;
+  }
 }
 
 #container {
   padding-left: 20px;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
