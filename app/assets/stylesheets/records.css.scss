@@ -33,18 +33,25 @@ ul#records {
       }
     }
 
-    img.cover {
-      width: 200px;
-      margin-bottom: 10px;
+    a.cover {
+      img {
+        width: 200px;
+        margin: 10px;
+        margin: 0 auto 10px;
+        line-height: 200px;
+        max-height: 200px;
+        display: block;
+        font-style: italic;
+      }
+      text-decoration: none;
+      color: #aaa;
     }
 
-    a.record {
+    a.title {
       display: block;
       color: #333;
       font-weight: bold;
-      span.title {
-        font-size: 16px;
-      }
+      font-size: 16px;
     }
 
     span.artist {

@@ -2,13 +2,11 @@
   <a href="#" id="edit_record_<%= record.get('id') %>" class="edit">Edit</a> ·
   <a href="#" id="delete_record_<%= record.get('id') %>" class="delete">Delete</a>
 </div>
-<a class="record" href="<%= record.get('spotify_uri') %>">
-  <img class="cover" src="<%= record.get('cover_url') %>"></img>
+<a class="cover" href="<%= record.get('spotify_uri') %>">
+  <img alt="no cover" title="<%= record.get('title') %>" src="<%= record.get('cover_url') %>"></img>
 </a>
-<a class="record" href="<%= record.get('spotify_uri') %>">
-  <span class='title'>
-    <%= record.get('title') %>
-  </span>
+<a class="title" href="<%= record.get('spotify_uri') %>">
+  <%= record.get('title') %>
 </a>
 <span class='artist'>
   <%= record.get('artist') %>
