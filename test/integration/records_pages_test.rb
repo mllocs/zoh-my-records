@@ -31,7 +31,7 @@ class RecordsPagesTest < ActionDispatch::IntegrationTest
     visit "/records/new"
     fill_in "title", :with => "The Harrow And The Harvest"
     fill_in "artist", :with => "Gillian Welch"
-    fill_in "cover_url", :with => "http://upload.wikimedia.org/wikipedia/en/thumb/1/18/Theharrowandtheharvest.jpg/220px-Theharrowandtheharvest.jpg"
+    fill_in "cover_url", :with => "http://upload.wikimedia.org/wikipedia/en/thumb/1/18/Theharrowandtheharvest.jpg"
     fill_in "spotify_uri", :with => "spotify:user:maxim.colls:playlist:0gxuTvV1XhCrnePamtPRrO"
     click_button "Add Record"
 

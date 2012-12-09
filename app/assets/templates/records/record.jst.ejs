@@ -5,9 +5,9 @@
 <a class="cover" href="<%= record.get('spotify_uri') %>">
   <img alt="no cover" title="<%= record.get('title') %>" src="<%= record.get('cover_url') %>"></img>
 </a>
-<a class="title" href="<%= record.get('spotify_uri') %>">
-  <%= record.get('title') %>
+<a class="title" href="<%= record.get('spotify_uri') %>" title="<%= record.get('title') %>">
+  <%= record.get('title').truncate(26) %>
 </a>
-<span class='artist'>
-  <%= record.get('artist') %>
+<span class='artist' title="<%= record.get('artist') %>">
+  <%= record.get('artist').truncate(35) %>
 </span>

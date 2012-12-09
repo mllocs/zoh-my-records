@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require utils
 //= require ./zoh_my_records
 //= require_tree ../templates/
 //= require_tree ./models
