@@ -21,7 +21,7 @@ ul#records {
     background-color: #f8f8f8;
 
     &:hover {
-      @include box-shadow(0 0 8px #888);
+      @include box-shadow(0 0 8px #666);
     }
 
     div.menu {
@@ -36,15 +36,11 @@ ul#records {
     a.cover {
       img {
         width: 200px;
-        margin: 10px;
+        height: 200px;
         margin: 0 auto 10px;
-        line-height: 200px;
-        max-height: 200px;
         display: block;
-        font-style: italic;
+        border: 1px dotted #ccc;
       }
-      text-decoration: none;
-      color: #aaa;
     }
 
     a.title {

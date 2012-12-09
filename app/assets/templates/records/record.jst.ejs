@@ -3,7 +3,7 @@
   <a href="#" id="delete_record_<%= record.get('id') %>" class="delete">Delete</a>
 </div>
 <a class="cover" href="<%= record.get('spotify_uri') %>">
-  <img alt="no cover" title="<%= record.get('title') %>" src="<%= record.get('cover_url') %>"></img>
+  <img alt="" width="200px" height="200px" title="<%= record.get('title') %>" src="<%= record.get('cover_url') %>"></img>
 </a>
 <a class="title" href="<%= record.get('spotify_uri') %>" title="<%= record.get('title') %>">
   <%= record.get('title').truncate(26) %>

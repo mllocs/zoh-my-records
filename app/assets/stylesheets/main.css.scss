@@ -4,6 +4,7 @@
 
 body {
   background: #eee;
+  @include background-image(radial-gradient(50% 50%, circle cover, #fcfcfc, #ccc));
   font-family: Helvetica;
 }
 
