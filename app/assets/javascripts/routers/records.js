@@ -2,7 +2,9 @@ ZohMyRecords.Routers.Records = Backbone.Router.extend({
 
   routes: { 
     "": "index",
-    "records/new": "newRecord"
+    "records": "index",
+    "records/new": "newRecord",
+    "records/:id/edit": "editRecord"
   },
 
   initialize: function() {
@@ -11,12 +13,17 @@ ZohMyRecords.Routers.Records = Backbone.Router.extend({
   },
 
   index: function() {
-    view = new ZohMyRecords.Views.RecordsIndex({ collection: this.collection });
+    var view = new ZohMyRecords.Views.RecordsIndex({ collection: this.collection });
     $('#container').html(view.render().el);
   },
 
   newRecord: function() {
-    view = new ZohMyRecords.Views.NewRecord({ collection: this.collection });
+    var view = new ZohMyRecords.Views.NewRecord({ collection: this.collection });
+    $('#container').html(view.render().el);
+  },
+
+  editRecord: function(id) {
+    var view = new ZohMyRecords.Views.NewRecord({ collection: this.collection, id: id });
     $('#container').html(view.render().el);
   }
 

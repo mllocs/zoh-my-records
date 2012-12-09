@@ -59,11 +59,51 @@ class RecordsPagesTest < ActionDispatch::IntegrationTest
 
   test "record delete button" do
     visit "/"
-    assert page.has_content?("Low Edges")
-    click_link "delete_record_1"
+    assert page.has_content?("OH (Ohio)")
+    click_link "delete_record_3"
     assert_equal page.driver.browser.switch_to.alert.text, "Are you sure?"
     page.driver.browser.switch_to.alert.accept
-    assert page.has_no_content?("Low Edges")
+    assert page.has_no_content?("OH (Ohio)")
+  end
+
+  test "edit record link" do
+    visit "/"
+    assert page.has_content?("Low Edges")
+    click_link "edit_record_1"
+    within("form#edit_record") do
+      assert_equal find_field('title').value, "Low Edges"
+      assert_equal find_field('artist').value, "Richard Hawley"
+      assert_equal find_field('cover_url').value, "http://cdn.krrb.com/post_images/photos/000/000/361/Richard_Hawley_Lowedges1_large.jpg"
+      assert_equal find_field('spotify_uri').value, "spotify:album:6O2x7QN3BqUeXBaH8Fot49"
+    end
+  end
+
+  test "edit record save action if valid" do
+    visit "/"
+    assert page.has_content?("Low Edges")
+    click_link "edit_record_1"
+    within("form#edit_record") do
+      fill_in "title", :with => "New Title"
+      fill_in "artist", :with => "New Artist"
+      click_button "Save Record"
+    end
+    within("ul#records") do
+      assert page.has_content?("New Title")
+      assert page.has_content?("New Artist")
+    end
+  end
+
+  test "edit record save action show errors if not valid" do
+    visit "/"
+    assert page.has_content?("The Heart Of Sunday Night")
+    click_link "edit_record_2"
+    within("form#edit_record") do
+      fill_in "title", :with => ""
+      click_button "Save Record"
+    end
+    assert_equal page.driver.browser.switch_to.alert.text, "title can't be blank"
+    page.driver.browser.switch_to.alert.accept
+    assert_equal current_path, "/records/2/edit"
   end
 
 end

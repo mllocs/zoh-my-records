@@ -4,11 +4,17 @@ ZohMyRecords.Views.NewRecord = Backbone.View.extend({
 
   events: {
     "click #cancel": "cancel",
-    "submit #new_record": "createRecord"
+    "submit #new_record": "createRecord",
+    "submit #edit_record": "updateRecord"
+  },
+
+  initialize: function() {
+    this.collection.on('reset', this.render, this);
   },
 
   render: function() {
-    $(this.el).html(this.template());
+    this.model = (this.id === undefined) ? undefined : this.collection.get(this.id);
+    $(this.el).html(this.template({ record: this.model }));
     return this;
   },
 
@@ -19,16 +25,30 @@ ZohMyRecords.Views.NewRecord = Backbone.View.extend({
 
   createRecord: function(event) {
     event.preventDefault();
-    this.collection.create({
-      title: $('#new_record_title').val(),
-      artist: $('#new_record_artist').val(),
-      cover_url: $('#new_record_cover_url').val(),
-      spotify_uri: $('#new_record_spotify_uri').val()
-    }, {
+    this.collection.create(this.getAttributes(), {
       wait: true,
       success: this.goToMain,
       error: this.handleError
     });
+  },
+
+  updateRecord: function(event) {
+    event.preventDefault();
+    this.model.save(this.getAttributes(), {
+      wait: true,
+      success: this.goToMain,
+      error: this.handleError
+    });
+
+  },
+
+  getAttributes: function() {
+    return {
+      title: $('#record_title').val(),
+      artist: $('#record_artist').val(),
+      cover_url: $('#record_cover_url').val(),
+      spotify_uri: $('#record_spotify_uri').val()
+    };
   },
 
   handleError: function(entry, response) {
@@ -37,6 +57,7 @@ ZohMyRecords.Views.NewRecord = Backbone.View.extend({
       for (attribute in errors) {
         messages = errors[attribute];
         alert("" + attribute + " " + messages[0]);
+        $("#record_" + attribute).focus();
         break;
       }
     }

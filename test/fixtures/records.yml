@@ -13,3 +13,10 @@ two:
   artist: Tom Waits
   cover_url: http://ijustreadaboutthat.files.wordpress.com/2011/09/75112.jpg
   spotify_uri: spotify:track:23X3UiWmkM09Ug2heM6z38
+
+three:
+  id: 3
+  title: "OH (Ohio)"
+  artist: "Lambchop"
+  cover_url: "http://expressmilwaukee.com/imgs/hed/art5489widea.jpg"
+  spotify_uri: "spotify:album:4y9ebrmAx1TMyUlyCVJJL6"

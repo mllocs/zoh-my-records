@@ -4,7 +4,8 @@ ZohMyRecords.Views.Record = Backbone.View.extend({
   tagName: "li",
 
   events: {
-    "click .delete": "deleteRecord"
+    "click .delete": "deleteRecord",
+    "click .edit": "editRecord"
   },
 
   initialize: function() {
@@ -24,6 +25,12 @@ ZohMyRecords.Views.Record = Backbone.View.extend({
         error: this.handleError
       });
     }
+  },
+
+  editRecord: function(event) {
+    event.preventDefault();
+    var edit_path = "/records/" + parseInt(this.model.get('id')) + "/edit"
+    Backbone.history.navigate(edit_path, true);
   },
 
   fadeOut: function() {
