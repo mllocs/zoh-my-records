@@ -18,12 +18,12 @@ ZohMyRecords.Routers.Records = Backbone.Router.extend({
   },
 
   newRecord: function() {
-    var view = new ZohMyRecords.Views.NewRecord({ collection: this.collection });
+    var view = new ZohMyRecords.Views.RecordForm({ collection: this.collection });
     $('#container').html(view.render().el);
   },
 
   editRecord: function(id) {
-    var view = new ZohMyRecords.Views.NewRecord({ collection: this.collection, id: id });
+    var view = new ZohMyRecords.Views.RecordForm({ collection: this.collection, id: id });
     $('#container').html(view.render().el);
   }
 

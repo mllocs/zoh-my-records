@@ -1,6 +1,6 @@
-ZohMyRecords.Views.NewRecord = Backbone.View.extend({
+ZohMyRecords.Views.RecordForm = Backbone.View.extend({
 
-  template: JST['records/new'],
+  template: JST['records/form'],
 
   events: {
     "click #cancel": "cancel",
