@@ -12,7 +12,8 @@ ZohMyRecords.Views.RecordsIndex = Backbone.View.extend({
 
   appendRecord: function(record) {
     view = new ZohMyRecords.Views.Record({ model: record });
-    this.$("ul#records").append(view.render().el);
+    this.$("li.new.record").after(view.render().el);
+    // this.$("ul#records").append(view.render().el);
   },
 
   render: function() {

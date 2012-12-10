@@ -9,7 +9,8 @@ ZohMyRecords.Routers.Records = Backbone.Router.extend({
 
   initialize: function() {
     this.collection = new ZohMyRecords.Collections.Records();
-    this.collection.reset($('#container').data('records'));
+    // this.collection.fetch();
+    this.collection.reset($('#container').data('records')); // data preloading
   },
 
   index: function() {
