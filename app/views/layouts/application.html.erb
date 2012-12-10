@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ZOH·MY·RECORDS</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag "favicon.png" %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>ZOH·MY·RECORDS</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.png" %>
+  </head>
+  <body>
+    <h1 class="title"><a href="/">ZOH·MY·RECORDS</a></h1>
+    <%= yield %>
+    <a href="https://github.com/mllocs/zoh-my-records">
+      <img style="position: absolute; top: -11px; right: -11px; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+    </a>
+  </body>
 </html>
