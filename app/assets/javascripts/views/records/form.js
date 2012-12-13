@@ -53,9 +53,9 @@ ZohMyRecords.Views.RecordForm = Backbone.View.extend({
 
   handleError: function(entry, response) {
     if(response.status == 422) {
-      errors  = $.parseJSON(response.responseText).errors;
+      var errors = $.parseJSON(response.responseText).errors;
       for (attribute in errors) {
-        messages = errors[attribute];
+        var messages = errors[attribute];
         alert("" + attribute + " " + messages[0]);
         $("#record_" + attribute).focus();
         break;
